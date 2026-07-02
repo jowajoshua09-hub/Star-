@@ -1,0 +1,48 @@
+{
+  "name": "Star AI Telegram Bot",
+  "description": "24/7 AI-powered Telegram bot with voice, images, and video support",
+  "repository": "https://github.com/jowajoshua09-hub/Star-",
+  "keywords": ["telegram", "bot", "ai", "deepseek", "grok"],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "env": {
+    "TELEGRAM_BOT_TOKEN": {
+      "description": "Your Telegram bot token from @BotFather",
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "Your Telegram user ID (owner)",
+      "required": true
+    },
+    "REQUIRED_CHANNEL": {
+      "description": "Channel username (e.g., @startech372)",
+      "value": "@startech372",
+      "required": true
+    },
+    "REQUIRED_CHANNEL_LINK": {
+      "description": "Channel link (e.g., https://t.me/startech372)",
+      "value": "https://t.me/startech372",
+      "required": true
+    },
+    "DEEPSEEK_API_URL": {
+      "description": "DeepSeek API endpoint",
+      "value": "https://api.hostify.co.zw/api/ai/deepseek",
+      "required": false
+    },
+    "GROK_API_URL": {
+      "description": "Grok API endpoint",
+      "value": "https://api.hostify.co.zw/api/ai/grok",
+      "required": false
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  },
+  "stack": "heroku-22"
+}
