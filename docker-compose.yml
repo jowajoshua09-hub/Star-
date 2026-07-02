@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  starai:
+    build: .
+    container_name: starai-bot
+    restart: always
+    environment:
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+      OWNER_ID: ${OWNER_ID}
+      REQUIRED_CHANNEL: ${REQUIRED_CHANNEL}
+      REQUIRED_CHANNEL_LINK: ${REQUIRED_CHANNEL_LINK}
+    volumes:
+      - ./data:/app/data
+    networks:
+      - starai-network
+
+networks:
+  starai-network:
+    driver: bridge

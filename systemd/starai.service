@@ -1,0 +1,15 @@
+[Unit]
+Description=Star AI Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+User=starai
+WorkingDirectory=/home/starai/starai
+Environment="PATH=/home/starai/starai/venv/bin"
+ExecStart=/home/starai/starai/venv/bin/python main.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
